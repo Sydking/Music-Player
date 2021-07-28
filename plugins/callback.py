@@ -28,7 +28,7 @@ playlist=Config.playlist
 
 HELP = """
 
-<b>Add the bot and User account in your Group with admin rights.
+<b>You Can't Add Me To Your Group.
 
 Start a VoiceChat
 
@@ -81,7 +81,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pl = f"{emoji.NO_ENTRY} Empty Playlist"
         else:
             pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+                f"**{i}**. **🎶{x[1]}**\n   🗣️**Requested by:** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         await query.edit_message_text(
@@ -105,7 +105,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             mp.group_call.pause_playout()
             pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+                f"**{i}**. **🎶{x[1]}**\n   🗣️**Requested by:** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         await query.edit_message_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} Paused\n\n{pl}",
@@ -128,7 +128,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             mp.group_call.resume_playout()
             pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+                f"**{i}**. **🎶{x[1]}**\n   🗣️**Requested by:** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         await query.edit_message_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} Resumed\n\n{pl}",
@@ -150,7 +150,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             await mp.skip_current_playing()
             pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎸{x[1]}**\n   👤**Requested by:** {x[4]}"
+                f"**{i}**. **🎶{x[1]}**\n   🗣️**Requested by:** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         try:
@@ -171,12 +171,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-                InlineKeyboardButton('🤖 Other Bots', url='https://t.me/subin_works/122'),
+                InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/JavesUpdates'),
+                InlineKeyboardButton('🤖 User Bot', url='https://t.me/JavesOT'),
             ],
             [
-                InlineKeyboardButton('👨🏼‍💻 Developer', url='https://t.me/subinps'),
-                InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/MusicPlayer'),
+                InlineKeyboardButton('👤 Developer', url='https://t.me/syd_pewerbot'),
+                InlineKeyboardButton('🧩 Source', url='https://github.com/Sydking/Music-Player'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
